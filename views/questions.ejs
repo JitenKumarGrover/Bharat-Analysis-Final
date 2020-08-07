@@ -1,0 +1,22 @@
+<%- include('partials/header'); -%>
+
+
+
+<div class="container" style="padding: 20px;">
+  <h1>Add Questions</h1>
+
+  <form action="/questions" method="POST">
+      <div class="form-group">
+        <label>Question</label>
+        <input type="text" class="form-control" name="question">
+        <!-- <label>Choices</label>
+        <input type="text" class="form-control" name="choices"> -->
+      </div>
+      <button  class="btn btn-primary" type="submit" name="button">Add</button>
+    </form>
+</div>
+
+
+
+
+<%- include('partials/footer'); -%>
