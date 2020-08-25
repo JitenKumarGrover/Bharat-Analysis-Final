@@ -1,0 +1,149 @@
+<%- include('partials/admin-header'); -%>
+
+<div class="container">
+  <a style="text-align: right;" class="nav-link" href="/logout" role="button">Log Out</a>
+</div>
+ 
+
+
+<div class="container" style="padding: 20px;">
+  <h1>Headlines Topics</h1>
+  <div class="row">
+    <div class="col-md-4 brdrrght">
+  <h3>Main Topic</h3>
+  <h5 style = "text-transform:capitalize;">Current: <%= topics %> </h5>
+  <p><hr></p>
+  <form action="/topic" method="POST">
+      <div class="form-group">
+        <label>Update Topic</label>
+        <input type="text" class="form-control" name="headlinesTitle" required>
+      </div>
+      <button  class="btn btn-primary" type="submit" name="button">Change</button>
+    </form>
+<br>
+</div>
+<div class="col-md-4 brdrrght">
+<h3>Topic 2</h3>
+<h5 style = "text-transform:capitalize;">Current: <%= topics2 %> </h5>
+<p><hr></p>
+<form action="/topic2" method="POST">
+    <div class="form-group">
+      <label>Update Topic</label>
+      <input type="text" class="form-control" name="headlinesTitle" required>
+    </div>
+    <button  class="btn btn-primary" type="submit" name="button">Change</button>
+  </form>
+</div>
+<div class="col-md-4">
+  <h3>Topic 3</h3>
+<h5 style = "text-transform:capitalize;">Current: <%= topics3 %> </h5>
+<p><hr></p>
+<form action="/topic3" method="POST">
+    <div class="form-group">
+      <label>Update Topic</label>
+      <input type="text" class="form-control" name="headlinesTitle" required>
+    </div>
+    <button  class="btn btn-primary" type="submit" name="button">Change</button>
+  </form>
+  <br>
+</div>
+<div class="col-md-6 brdrtop brdrrght">
+  <br>
+  <h3>Topic 4</h3>
+<h5 style = "text-transform:capitalize;">Current: <%= topics4 %> </h5>
+<p><hr></p>
+<form action="/topic4" method="POST">
+    <div class="form-group">
+      <label>Update Topic</label>
+      <input type="text" class="form-control" name="headlinesTitle" required>
+    </div>
+    <button  class="btn btn-primary" type="submit" name="button">Change</button>
+  </form>
+  <br>
+</div>
+<div class="col-md-6 brdrtop">
+  <br>
+  <h3>Topic 5</h3>
+<h5 style = "text-transform:capitalize;">Current: <%= topics5 %> </h5>
+<p><hr></p>
+<form action="/topic5" method="POST">
+    <div class="form-group">
+      <label>Update Topic</label>
+      <input type="text" class="form-control" name="headlinesTitle" required>
+    </div>
+    <button  class="btn btn-primary" type="submit" name="button">Change</button>
+  </form>
+</div>
+
+<br>
+</div>
+</div>
+
+<hr style="width: 60%;border: 1px solid; color: gray;"> 
+
+<div class="container" style="padding: 20px;">
+  <h1>About Us</h1>
+  <h5>Current: <h6><b>Click the checkbox to delete the content</b></h6> </h5>
+ 
+     
+  <%  paragraphs.forEach(function(paragraph){  %> 
+    <form action="/delete" method="POST">
+    <h5>
+      <input type="checkbox" name="checkbox" value="<%=paragraph._id%>" onChange="this.form.submit()"> &nbsp;
+      <%= paragraph.paragraph.substring(0,100) + " ..." %>
+    </h5>
+    <input type="hidden" name="paraName" value=""></input>
+  </form>
+      
+
+    <% }); %>
+    <p><hr></p>
+  <form action="/aboutpara" method="POST">
+      <div class="form-group">
+        <label>Add Paragraph</label>
+        <textarea type="text" class="form-control textarea" placeholder="Add Paragraph *" id="message" name="para" required></textarea>
+      </div>
+      <button  class="btn btn-primary" type="submit" name="button">Add</button>
+    </form>
+</div>
+
+<br>
+<hr style="width: 60%;border: 1px solid; color: gray;"> 
+
+<div class="container" style="padding: 20px;">
+  <h1>Add Contest</h1>
+
+  <form action="/questions" method="POST">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" name="" required>
+        <br>
+        <label>Description</label>
+        <textarea type="text" class="form-control textarea" placeholder="Add Description *" id="message" name="" required></textarea>
+      </div>
+      <button  class="btn btn-primary" type="submit" name="button">Add</button>
+    </form>
+</div>
+</div>
+
+<br>
+
+<div class="container" style="padding: 20px;">
+  <h1>Add Questions</h1>
+
+  <form action="/questions" method="POST">
+      <div class="form-group">
+        <label>Question</label>
+        <input type="text" class="form-control" name="question" required>
+        <br>
+        <input type="text" class="form-control" name="choice" required>
+        <br>
+        <input type="text" class="form-control" name="vote" required>
+        <!-- <label>Choices</label>
+        <input type="text" class="form-control" name="choices"> -->
+      </div>
+      <button  class="btn btn-primary" type="submit" name="button">Add</button>
+    </form>
+</div>
+</div>
+</div>

@@ -13,21 +13,15 @@
                 <h1 class="mt-5">
                   About Us
                 </h1>
-                <p class="font-weight-600 fs-15">
-                  Bharat Analysis is the leading Indian News Platform that provides 360-degree information about the latest happenings in India. Our team works 24×7 to provide you with all the latest and authentic information taking place all over India. Be it sports, agriculture, or politics, Bharat Analysis is a one-time stop for everybody who wishes to keep themselves and their loved ones fully updated. India is a country in which something or the other is always happening. It becomes difficult to catch hold of everything. Though the source of information is many, the source of authentic information is limited. It’s very difficult for a common man to differentiate between fake and authentic news. 
-                </p>
-                <p class="font-weight-600 fs-15 mb-5 mt-4">
-                  Talking particularly about the Millennial, they are the busy bugs. They don’t even get time for themselves. In such a busy schedule, who has time to sit back and watch the news on television? Laptops and mobile phones are the most common modes used to keep themselves updated with the current happenings in the country. They are easily accessible and easy to operate which is why most of the people have started preferring it over other traditional sources like radios and televisions. Keeping all this in mind, we have developed this one-stop website so that our users do not face any type of difficulty in getting all the news updates. 
-                </p>
-                <img
-                  src="/images/about/about.jpg"
-                  alt="banner"
-                  class="img-fluid mb-5"
-                />
+                
+                <%  paragraphs.forEach(function(paragraph){  %> 
 
-                <p class="font-weight-600 fs-15 text-center">
-                  Knowledge is man’s best friend, guide, and savior in every step of life. You can fight with the world and survive in every situation, only if you are exactly aware of what is what. And in today’s world where there are so many platforms that are available for you, why not take advantage of it. If you wish to know everything that is happening in your country in fewer words, you are in the right place. We believe in delivering quality with quantity. Come, let’s analyse numbers in Bharat!   
+                <p class="font-weight-600 fs-15">
+                  <%= paragraph.paragraph %>
                 </p>
+
+                <% }); %>
+            
               </div>
             </div>
           </div>
